@@ -1,0 +1,22 @@
+http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
+git_repository = use_repo_rule("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
+
+# patches = glob(["thirdparty/zstd/patches/*.patch"])
+
+git_repository(
+	name = "xatlas",
+	branch = "master",
+	remote = "https://github.com/jpcy/xatlas.git",
+)
+
+git_repository(
+	name = "zlib",
+	branch = "develop",
+	remote = "https://github.com/madler/zlib.git",
+)
+
+git_repository(
+	name = "zstd",
+	branch = "dev",
+	remote = "https://github.com/facebook/zstd.git",
+)
