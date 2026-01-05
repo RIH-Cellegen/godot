@@ -18,7 +18,10 @@ git_repository(
 	name = "amd-fsr2",
 	branch = "master",
 	remote = "https://github.com/GPUOpen-Effects/FidelityFX-FSR2.git",
-	patches = glob(["thirdparty/amd-fsr2/patches/*.patch"]),
+	patches = [
+		"thirdparty/amd-fsr2/patches/0001-build-fixes.patch",
+		"thirdparty/amd-fsr2/patches/0002-godot-fsr2-options.patch",
+	],
 )
 
 # Needs maintenance.
@@ -37,7 +40,14 @@ git_repository(
 	name = "basis_universal",
 	branch = "master",
 	remote = "https://github.com/BinomialLLC/basis_universal.git",
-	patches = glob(["thirdparty/basis_universal/patches/*.patch"]),
+	patches = [
+		"thirdparty/basis_universal/patches/0001-external-zstd-pr344.patch",
+		"thirdparty/basis_universal/patches/0002-external-tinyexr.patch",
+		"thirdparty/basis_universal/patches/0003-remove-tinydds-qoi.patch",
+		"thirdparty/basis_universal/patches/0004-clang-warning-exclude.patch",
+		"thirdparty/basis_universal/patches/0005-unused-typedef.patch",
+		"thirdparty/basis_universal/patches/0006-explicit-includes.patch",
+	],
 )
 
 git_repository(
@@ -56,14 +66,19 @@ git_repository(
 	name = "clipper2",
 	branch = "main",
 	remote = "https://github.com/AngusJohnson/Clipper2.git",
-	patches = glob(["thirdparty/clipper2/patches/*.patch"]),
+	patches = [
+		"thirdparty/clipper2/patches/0001-disable-exceptions.patch",
+		"thirdparty/clipper2/patches/0002-llvm-21-header.patch",
+	],
 )
 
 git_repository(
 	name = "cvtt",
 	branch = "master",
 	remote = "https://github.com/elasota/ConvectionKernels.git",
-	patches = glob(["thirdparty/cvtt/patches/*.patch"]),
+	patches = [
+		"thirdparty/cvtt/patches/0001-revert-bc6h-reorg.patch",
+	],
 )
 
 git_repository(
@@ -76,14 +91,18 @@ git_repository(
 	name = "directx_headers",
 	branch = "main",
 	remote = "https://github.com/microsoft/DirectX-Headers.git",
-	patches = glob(["thirdparty/directx_headers/patches/*.patch"]),
+	patches = [
+		"thirdparty/directx_headers/patches/0001-win7-8-dynamic-load.patch",
+	],
 )
 
 git_repository(
 	name = "doctest",
 	branch = "master",
 	remote = "https://github.com/doctest/doctest.git",
-	patches = glob(["thirdparty/doctest/patches/*.patch"]),
+	patches = [
+		"thirdparty/doctest/patches/0001-ciso646-version.patch",
+	],
 )
 
 git_repository(
@@ -96,21 +115,32 @@ git_repository(
 	name = "embree",
 	branch = "master",
 	remote = "https://github.com/RenderKit/embree.git",
-	patches = glob(["thirdparty/embree/patches/*.patch"]),
+	patches = [
+		"thirdparty/embree/patches/0001-disable-exceptions.patch",
+		"thirdparty/embree/patches/0002-godot-config.patch",
+		"thirdparty/embree/patches/0003-emscripten-nthreads.patch",
+		"thirdparty/embree/patches/0004-mingw-no-cpuidex.patch",
+		"thirdparty/embree/patches/0005-mingw-llvm-arm64.patch",
+		"thirdparty/embree/patches/0006-explicit-includes.patch",
+	],
 )
 
 git_repository(
 	name = "enet",
 	branch = "master",
 	remote = "https://github.com/lsalzman/enet.git",
-	patches = glob(["thirdparty/enet/patches/*.patch"]),
+	patches = [
+		"thirdparty/enet/patches/0001-godot-socket.patch",
+	],
 )
 
 git_repository(
 	name = "etcpak",
 	branch = "master",
 	remote = "https://github.com/wolfpld/etcpak.git",
-	patches = glob(["thirdparty/etcpak/patches/*.patch"]),
+	patches = [
+		"thirdparty/etcpak/patches/0001-remove-bc7enc.patch",
+	],
 )
 
 git_repository(
@@ -207,14 +237,19 @@ git_repository(
 	name = "glad",
 	branch = "glad2",
 	remote = "https://github.com/Dav1dde/glad.git",
-	patches = glob(["thirdparty/glad/patches/*.patch"]),
+	patches = [
+		"thirdparty/glad/patches/0001-enable-both-gl-and-gles.patch",
+	],
 )
 
 git_repository(
 	name = "glslang",
 	branch = "main",
 	remote = "https://github.com/KhronosGroup/glslang.git",
-	patches = glob(["thirdparty/glslang/patches/*.patch"]),
+	patches = [
+		"thirdparty/glslang/patches/0001-apple-disable-absolute-paths.patch",
+		"thirdparty/glslang/patches/0002-gcc15-include-fix.patch",
+	],
 )
 
 git_repository(
@@ -252,7 +287,9 @@ git_repository(
 	name = "libbacktrace",
 	branch = "master",
 	remote = "https://github.com/ianlancetaylor/libbacktrace.git",
-	patches = glob(["thirdparty/libbacktrace/patches/*.patch"]),
+	patches = [
+		"thirdparty/libbacktrace/patches/0001-big-files-support.patch",
+	],
 )
 
 git_repository(
@@ -265,7 +302,11 @@ git_repository(
 	name = "libktx",
 	branch = "main",
 	remote = "https://github.com/KhronosGroup/KTX-Software.git",
-	patches = glob(["thirdparty/libktx/patches/*.patch"]),
+	patches = [
+		"thirdparty/libktx/patches/0001-external-basisu.patch",
+		"thirdparty/libktx/patches/0002-disable-astc-block-ext.patch",
+		"thirdparty/libktx/patches/0003-basisu-1.60.patch",
+	],
 )
 
 git_repository(
@@ -392,19 +433,10 @@ git_repository(
 	name = "alsa-lib",
 	branch = "master",
 	remote = "https://github.com/alsa-project/alsa-lib.git",
-	patches = glob(["thirdparty/linuxbsd_headers/alsa/patches/*.patch"]),
-)
-
-git_repository(
-	name = "alsa-lib",
-	branch = "master",
-	remote = "https://github.com/alsa-project/alsa-lib.git",
-)
-
-git_repository(
-	name = "manifold",
-	branch = "master",
-	remote = "https://github.com/elalish/manifold.git",
+	patches = [
+		"thirdparty/linuxbsd_headers/alsa/patches/0001-musl-standard-poll.patch",
+		"thirdparty/linuxbsd_headers/alsa/patches/0002-freebsd-sys-endian.patch",
+	],
 )
 
 git_repository(
@@ -417,7 +449,9 @@ git_repository(
 	name = "mbedlts",
 	branch = "development",
 	remote = "https://github.com/Mbed-TLS/mbedtls.git",
-	patches = glob(["thirdparty/mbedlts/patches/*.patch"]),
+	patches = [
+		"thirdparty/mbedlts/patches/0001-msvc-2019-psa-redeclaration.patch",
+	],
 )
 
 git_repository(
@@ -430,7 +464,11 @@ git_repository(
 	name = "mingw-std-threads",
 	branch = "master",
 	remote = "https://github.com/meganz/mingw-std-threads.git",
-	patches = glob(["thirdparty/mingw-std-threads/patches/*.patch"]),
+	patches = [
+		"thirdparty/mingw-std-threads/patches/0001-disable-exceptions.patch",
+		"thirdparty/mingw-std-threads/patches/0002-clang-std-replacements-leak.patch",
+		"thirdparty/mingw-std-threads/patches/0003-explicit-includes.patch",
+	],
 )
 
 git_repository(
@@ -464,22 +502,10 @@ git_repository(
 	remote = "https://github.com/mmikk/MikkTSpace.git",
 )
 
-git_repository(
-	name = "mikktspace",
-	branch = "master",
-	remote = "https://github.com/mmikk/MikkTSpace.git",
-)
-
 # Needs maintainability
 http_archive(
 	name = "nvapi",
 	url = "https://download.nvidia.com/XFree86/nvapi-open-source-sdk/R560-OpenSource.tar",
-)
-
-git_repository(
-	name = "pcg",
-	branch = "master",
-	remote = "https://github.com/imneme/pcg-c.git",
 )
 
 git_repository(
@@ -529,7 +555,9 @@ git_repository(
 	name = "msdfgen",
 	branch = "main",
 	remote = "https://github.com/Chlumsky/msdfgen.git",
-	patches = glob(["thirdparty/msdfgen/patches/*.patch"]),
+	patches = [
+		"thirdparty/msdfgen/patches/0001-remove-unused-save-features.patch",
+	],
 )
 
 git_repository(
@@ -572,7 +600,13 @@ git_repository(
 	name = "sdl",
 	branch = "main",
 	remote = "https://github.com/libsdl-org/SDL.git",
-	patches = glob(["thirdparty/sdl/patches/*.patch"]),
+	patches = [
+		"thirdparty/sdl/patches/0001-remove-unnecessary-subsystems.patch",
+		"thirdparty/sdl/patches/0003-std-include.patch",
+		"thirdparty/sdl/patches/0004-errno-include.patch",
+		"thirdparty/sdl/patches/0005-fix-libudev-dbus.patch",
+		"thirdparty/sdl/patches/0006-fix-cs-environ.patch",
+	],
 )
 
 git_repository(
@@ -597,21 +631,31 @@ git_repository(
 	name = "spirv_reflect",
 	branch = "main",
 	remote = "https://github.com/KhronosGroup/SPIRV-Reflect.git",
-	patches = glob(["thirdparty/spirv_reflect/patches/*.patch"]),
+	patches = [
+		"thirdparty/spirv_reflect/patches/0001-specialization-constants.patch",
+		"thirdparty/spirv_reflect/patches/0002-zero-size-for-sc-sized-arrays.patch",
+		"thirdparty/spirv_reflect/patches/0003-spirv-headers.patch",
+	],
 )
 
 git_repository(
 	name = "thorvg",
 	branch = "main",
 	remote = "https://github.com/thorvg/thorvg.git",
-	patches = glob(["thirdparty/thorvg/patches/*.patch"]),
+	patches = [
+		"thirdparty/thorvg/patches/0001-revert-tvglines-bezier-precision.patch",
+		"thirdparty/thorvg/patches/0002-use-heap-alloc.patch",
+		"thirdparty/thorvg/patches/0003-explicit-includes.patch",
+	],
 )
 
 git_repository(
 	name = "tinyexr",
 	branch = "release",
 	remote = "https://github.com/syoyo/tinyexr.git",
-	patches = glob(["thirdparty/tinyexr/patches/*.patch"]),
+	patches = [
+		"thirdparty/tinyexr/patches/0001-external-zlib.patch",
+	],
 )
 
 git_repository(
@@ -624,7 +668,14 @@ git_repository(
 	name = "vhacd",
 	branch = "master",
 	remote = "https://github.com/kmammou/v-hacd.git",
-	patches = glob(["thirdparty/vhacd/patches/*.patch"]),
+	patches = [
+		"thirdparty/vhacd/patches/0001-bullet-namespace.patch",
+		"thirdparty/vhacd/patches/0002-fpermissive-fix.patch",
+		"thirdparty/vhacd/patches/0003-fix-musl-build.patch",
+		"thirdparty/vhacd/patches/0004-fix-msvc-arm-build.patch",
+		"thirdparty/vhacd/patches/0005-fix-scale-calculation.patch",
+		"thirdparty/vhacd/patches/0006-gcc13-include-fix.patch",
+	],
 )
 
 git_repository(
@@ -652,12 +703,6 @@ git_repository(
 )
 
 git_repository(
-	name = "wayland",
-	branch = "main",
-	remote = "https://gitlab.freedesktop.org/wayland/wayland.git",
-)
-
-git_repository(
 	name = "wayland_protocols",
 	branch = "main",
 	remote = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git",
@@ -667,7 +712,9 @@ git_repository(
 	name = "wslay",
 	branch = "master",
 	remote = "https://github.com/tatsuhiro-t/wslay.git",
-	patches = glob(["thirdparty/wslay/patches/*.patch"]),
+	patches = [
+		"thirdparty/wslay/patches/0001-msvc-build-fix.patch",
+	],
 )
 
 git_repository(
