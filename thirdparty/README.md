@@ -289,6 +289,7 @@ Patches:
   * Upstream: https://android.googlesource.com/platform/frameworks/base/+/master/data/fonts/
   * Version: ? (pre-2014 commit when DroidSansJapanese.ttf was obsoleted)
   * License: Apache 2.0
+  * Note: Cannot properly maintain it.
 - `Inter*.woff2`:
   * Upstream: https://github.com/rsms/inter
   * Version: v4.1 (e3a3d4c57d5ecc01453a575621882a384c1995a3, 2024)
@@ -566,7 +567,7 @@ Patches:
 
 ## libogg
 
-- Upstream: https://www.xiph.org/ogg
+- Upstream: https://www.xiph.org/ogg (or at Github: https://github.com/gcp/libogg)
 - Version: 1.3.6 (be05b13e98b048f0b5a0f5fa8ce514d56db5f822, 2025)
 - License: BSD-3-Clause
 
@@ -579,7 +580,7 @@ Files extracted from upstream source:
 
 ## libpng
 
-- Upstream: http://libpng.org/pub/png/libpng.html
+- Upstream: http://libpng.org/pub/png/libpng.html (or at Github: https://github.com/pnggroup/libpng)
 - Version: 1.6.53 (4e3f57d50f552841550a36eabbb3fbcecacb7750, 2025)
 - License: libpng/zlib
 
@@ -606,7 +607,7 @@ Files extracted from upstream source:
 
 ## libvorbis
 
-- Upstream: https://www.xiph.org/vorbis
+- Upstream: https://www.xiph.org/vorbis (or at Gitlab: https://gitlab.xiph.org/xiph/vorbis)
 - Version: 1.3.7 (0657aee69dec8508a0011f47f3b69d7538e9d262, 2020)
 - License: BSD-3-Clause
 
@@ -757,6 +758,7 @@ Collection of single-file libraries used in Godot components.
   * Upstream: https://research.activision.com/publications/archives/fast-filtering-of-reflection-probes
     File coeffs_const_8.txt (retrieved April 2020)
   * License: MIT
+  * Note: needs PROPER maintenance!
 - `fastlz.{c,h}`
   * Upstream: https://github.com/ariya/FastLZ
   * Version: 0.5.0 (4f20f54d46f5a6dd4fae4def134933369b7602d2, 2020)
@@ -775,13 +777,15 @@ Collection of single-file libraries used in Godot components.
     - `ifaddrs-android-0001-complete-struct.patch` ([GH-34101](https://github.com/godotengine/godot/pull/34101))
 - `mikktspace.{c,h}`
   * Upstream: https://archive.blender.org/wiki/index.php/Dev:Shading/Tangent_Space_Normal_Maps/
+  (or at Github: https://github.com/mmikk/MikkTSpace)
   * Version: 1.0 (2011)
   * License: zlib
 - `nvapi_minimal.h`
   * Upstream: http://download.nvidia.com/XFree86/nvapi-open-source-sdk
-  * Version: R525
+  * Version: R560
   * License: MIT
   * Modifications: Created from upstream `nvapi.h` by removing unnecessary code.
+  * Note: Needs proper maintenance!
 - `ok_color.h`
   * Upstream: https://github.com/bottosson/bottosson.github.io/blob/master/misc/ok_color.h
   * Version: git (d69831edb90ffdcd08b7e64da3c5405acd48ad2c, 2022)
@@ -791,8 +795,9 @@ Collection of single-file libraries used in Godot components.
   * https://www.shadertoy.com/view/7sK3D1
   * Version: 2021-09-13
   * License: MIT
+  * Note: Need PROPER maintenance!
 - `pcg.{cpp,h}`
-  * Upstream: http://www.pcg-random.org
+  * Upstream: http://www.pcg-random.org (or at Github: https://github.com/imneme/pcg-c)
   * Version: minimal C implementation, http://www.pcg-random.org/download.html
   * License: Apache 2.0
 - `polypartition.{cpp,h}`
@@ -830,6 +835,7 @@ Collection of single-file libraries used in Godot components.
   * Upstream: http://wss.co.uk/pinknoise/yuv2rgb/ (to check)
   * Version: ?
   * License: BSD
+  * Note: This needs to be maintained on a git platform!
 
 
 ## msdfgen
@@ -882,7 +888,7 @@ Additional:
 
 ## pcre2
 
-- Upstream: http://www.pcre.org
+- Upstream: http://www.pcre.org (or at Github: https://github.com/PCRE2Project/pcre2)
 - Version: 10.47 (f454e231fe5006dd7ff8f4693fd2b8eb94333429, 2025)
 - License: BSD-3-Clause
 
@@ -897,18 +903,6 @@ Files extracted from upstream source:
 - `AUTHORS.md` and `LICENCE.md`
 
 
-## recastnavigation
-
-- Upstream: https://github.com/recastnavigation/recastnavigation
-- Version: 1.6.0 (6dc1667f580357e8a2154c28b7867bea7e8ad3a7, 2023)
-- License: zlib
-
-Files extracted from upstream source:
-
-- `Recast/` folder without `CMakeLists.txt`
-- `License.txt`
-
-
 ## re-spirv
 
 - Upstream: https://github.com/renderbag/re-spirv
@@ -920,6 +914,18 @@ Files extracted from upstream source:
 - `re-spirv.cpp`
 - `re-spirv.h`
 - `LICENSE`
+
+
+## recastnavigation
+
+- Upstream: https://github.com/recastnavigation/recastnavigation
+- Version: 1.6.0 (6dc1667f580357e8a2154c28b7867bea7e8ad3a7, 2023)
+- License: zlib
+
+Files extracted from upstream source:
+
+- `Recast/` folder without `CMakeLists.txt`
+- `License.txt`
 
 
 ## rvo2
@@ -947,18 +953,6 @@ and solve conflicts and also enrich the feature set originally
 proposed by these libraries and better integrate them with Godot.
 
 
-## smaa
-
-- Upstream: https://github.com/iryoku/smaa
-- Version: git (71c806a838bdd7d517df19192a20f0c61b3ca29d, 2013)
-- License: MIT
-
-Files extracted from upstream source:
-
-- `LICENSE`
-- Textures generated using the Python scripts in the `Scripts` folder
-
-
 ## sdl
 
 - Upstream: https://github.com/libsdl-org/SDL
@@ -977,6 +971,19 @@ Patches:
 - `0004-errno-include.patch` ([GH-108354](https://github.com/godotengine/godot/pull/108354))
 - `0005-fix-libudev-dbus.patch` ([GH-108373](https://github.com/godotengine/godot/pull/108373))
 - `0006-fix-cs-environ.patch` ([GH-109283](https://github.com/godotengine/godot/pull/109283))
+
+
+## smaa
+
+- Upstream: https://github.com/iryoku/smaa
+- Version: git (71c806a838bdd7d517df19192a20f0c61b3ca29d, 2013)
+- License: MIT
+
+Files extracted from upstream source:
+
+- `LICENSE`
+- Textures generated using the Python scripts in the `Scripts` folder
+- Note: Last updated 13 years ago! Probably outdated.
 
 
 ## spirv-cross
