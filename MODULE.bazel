@@ -1,7 +1,674 @@
 http_archive = use_repo_rule("@bazel_tools//tools/build_defs/repo:http.bzl", "http_archive")
 git_repository = use_repo_rule("@bazel_tools//tools/build_defs/repo:git.bzl", "git_repository")
 
-# patches = glob(["thirdparty/zstd/patches/*.patch"])
+
+git_repository(
+	name = "accesskit",
+	branch = "main",
+	remote = "https://github.com/AccessKit/accesskit-c.git",
+)
+
+git_repository(
+	name = "amd-fsr",
+	branch = "master",
+	remote = "https://github.com/GPUOpen-Effects/FidelityFX-FSR.git",
+)
+
+git_repository(
+	name = "amd-fsr2",
+	branch = "master",
+	remote = "https://github.com/GPUOpen-Effects/FidelityFX-FSR2.git",
+	patches = glob(["thirdparty/amd-fsr2/patches/*.patch"]),
+)
+
+# Needs maintenance.
+http_archive(
+	name = "angle",
+	url = "https://chromium.googlesource.com/angle/angle/+archive/refs/heads/main.tar.gz",
+)
+
+git_repository(
+	name = "astcenc",
+	branch = "main",
+	remote = "https://github.com/ARM-software/astc-encoder.git",
+)
+
+git_repository(
+	name = "basis_universal",
+	branch = "master",
+	remote = "https://github.com/BinomialLLC/basis_universal.git",
+	patches = glob(["thirdparty/basis_universal/patches/*.patch"]),
+)
+
+git_repository(
+	name = "brotli",
+	branch = "master",
+	remote = "https://github.com/google/brotli.git",
+)
+
+git_repository(
+	name = "certs",
+	branch = "master",
+	remote = "https://github.com/bagder/ca-bundle.git",
+)
+
+git_repository(
+	name = "clipper2",
+	branch = "main",
+	remote = "https://github.com/AngusJohnson/Clipper2.git",
+	patches = glob(["thirdparty/clipper2/patches/*.patch"]),
+)
+
+git_repository(
+	name = "cvtt",
+	branch = "master",
+	remote = "https://github.com/elasota/ConvectionKernels.git",
+	patches = glob(["thirdparty/cvtt/patches/*.patch"]),
+)
+
+git_repository(
+	name = "d3d12ma",
+	branch = "master",
+	remote = "https://github.com/GPUOpen-LibrariesAndSDKs/D3D12MemoryAllocator.git",
+)
+
+git_repository(
+	name = "directx_headers",
+	branch = "main",
+	remote = "https://github.com/microsoft/DirectX-Headers.git",
+	patches = glob(["thirdparty/directx_headers/patches/*.patch"]),
+)
+
+git_repository(
+	name = "doctest",
+	branch = "master",
+	remote = "https://github.com/doctest/doctest.git",
+	patches = glob(["thirdparty/doctest/patches/*.patch"]),
+)
+
+git_repository(
+	name = "dr_libs",
+	branch = "master",
+	remote = "https://github.com/mackron/dr_libs.git",
+)
+
+git_repository(
+	name = "embree",
+	branch = "master",
+	remote = "https://github.com/RenderKit/embree.git",
+	patches = glob(["thirdparty/embree/patches/*.patch"]),
+)
+
+git_repository(
+	name = "enet",
+	branch = "master",
+	remote = "https://github.com/lsalzman/enet.git",
+	patches = glob(["thirdparty/enet/patches/*.patch"]),
+)
+
+git_repository(
+	name = "etcpak",
+	branch = "master",
+	remote = "https://github.com/wolfpld/etcpak.git",
+	patches = glob(["thirdparty/etcpak/patches/*.patch"]),
+)
+
+git_repository(
+	name = "woff2",
+	branch = "master",
+	remote = "https://github.com/google/woff2.git",
+)
+
+git_repository(
+	name = "monofonts_vazirmatn",
+	branch = "master",
+	remote = "https://github.com/rastikerdar/vazirmatn.git",
+)
+
+git_repository(
+	name = "monofonts_opensans",
+	branch = "main",
+	remote = "https://github.com/googlefonts/opensans.git",
+)
+
+git_repository(
+	name = "monofonts_thai",
+	branch = "main",
+	remote = "https://github.com/notofonts/thai.git",
+)
+
+git_repository(
+	name = "monofonts_telugu",
+	branch = "main",
+	remote = "https://github.com/notofonts/telugu.git",
+)
+
+git_repository(
+	name = "monofonts_tamil",
+	branch = "main",
+	remote = "https://github.com/notofonts/tamil.git",
+)
+
+git_repository(
+	name = "monofonts_sinhala",
+	branch = "main",
+	remote = "https://github.com/notofonts/sinhala.git",
+)
+
+git_repository(
+	name = "monofonts_oriya",
+	branch = "main",
+	remote = "https://github.com/notofonts/oriya.git",
+)
+
+git_repository(
+	name = "monofonts_malayalam",
+	branch = "main",
+	remote = "https://github.com/notofonts/malayalam.git",
+)
+
+git_repository(
+	name = "monofonts_hebrew",
+	branch = "main",
+	remote = "https://github.com/notofonts/hebrew.git",
+)
+
+git_repository(
+	name = "monofonts_georgian",
+	branch = "main",
+	remote = "https://github.com/notofonts/georgian.git",
+)
+
+git_repository(
+	name = "monofonts_bengali",
+	branch = "main",
+	remote = "https://github.com/notofonts/bengali.git",
+)
+
+git_repository(
+	name = "jetbrainsmono",
+	branch = "master",
+	remote = "https://github.com/JetBrains/JetBrainsMono.git",
+)
+
+git_repository(
+	name = "inter",
+	branch = "master",
+	remote = "https://github.com/rsms/inter.git",
+)
+
+git_repository(
+	name = "freetype",
+	branch = "master",
+	remote = "https://gitlab.freedesktop.org/freetype/freetype.git",
+)
+
+git_repository(
+	name = "glad",
+	branch = "glad2",
+	remote = "https://github.com/Dav1dde/glad.git",
+	patches = glob(["thirdparty/glad/patches/*.patch"]),
+)
+
+git_repository(
+	name = "glslang",
+	branch = "main",
+	remote = "https://github.com/KhronosGroup/glslang.git",
+	patches = glob(["thirdparty/glslang/patches/*.patch"]),
+)
+
+git_repository(
+	name = "graphite",
+	branch = "master",
+	remote = "https://github.com/silnrsi/graphite.git",
+)
+
+# src/to_chars.cpp, a.k.a "grisu2" is found here.
+git_repository(
+	name = "simdjson",
+	branch = "master",
+	remote = "https://github.com/simdjson/simdjson.git",
+)
+
+git_repository(
+	name = "harfbuzz",
+	branch = "main",
+	remote = "https://github.com/harfbuzz/harfbuzz.git",
+)
+
+git_repository(
+	name = "icu4c",
+	branch = "main",
+	remote = "https://github.com/unicode-org/icu.git",
+)
+
+git_repository(
+	name = "jolt_physics",
+	branch = "master",
+	remote = "https://github.com/jrouwe/JoltPhysics.git",
+)
+
+git_repository(
+	name = "libbacktrace",
+	branch = "master",
+	remote = "https://github.com/ianlancetaylor/libbacktrace.git",
+	patches = glob(["thirdparty/libbacktrace/patches/*.patch"]),
+)
+
+git_repository(
+	name = "libjpeg-turbo",
+	branch = "main",
+	remote = "https://github.com/libjpeg-turbo/libjpeg-turbo.git",
+)
+
+git_repository(
+	name = "libktx",
+	branch = "main",
+	remote = "https://github.com/KhronosGroup/KTX-Software.git",
+	patches = glob(["thirdparty/libktx/patches/*.patch"]),
+)
+
+git_repository(
+	name = "libogg",
+	branch = "master",
+	remote = "https://github.com/gcp/libogg.git",
+)
+
+git_repository(
+	name = "libpng",
+	branch = "develop",
+	remote = "https://github.com/pnggroup/libpng.git",
+)
+
+# Needs maintenance.
+http_archive(
+	name = "libtheora",
+	url = "http://downloads.xiph.org/releases/theora/libtheora-1.2.0.tar.gz",
+)
+
+git_repository(
+	name = "libvorbis",
+	branch = "main",
+	remote = "https://gitlab.xiph.org/xiph/vorbis.git",
+)
+
+# Needs maintenance.
+http_archive(
+	name = "libwebp",
+	url = "https://chromium.googlesource.com/webm/libwebp/+archive/refs/heads/main.tar.gz",
+)
+
+git_repository(
+	name = "xkbcommon",
+	branch = "master",
+	remote = "https://github.com/xkbcommon/libxkbcommon.git",
+)
+
+git_repository(
+	name = "libxrender",
+	branch = "master",
+	remote = "https://gitlab.freedesktop.org/xorg/lib/libxrender.git",
+)
+
+git_repository(
+	name = "libxrandr",
+	branch = "master",
+	remote = "https://gitlab.freedesktop.org/xorg/lib/libxrandr.git",
+)
+
+git_repository(
+	name = "libx11",
+	branch = "master",
+	remote = "https://gitlab.freedesktop.org/xorg/lib/libx11.git",
+)
+
+git_repository(
+	name = "libxi",
+	branch = "master",
+	remote = "https://gitlab.freedesktop.org/xorg/lib/libxi.git",
+)
+
+git_repository(
+	name = "libxinerama",
+	branch = "master",
+	remote = "https://gitlab.freedesktop.org/xorg/lib/libxinerama.git",
+)
+
+git_repository(
+	name = "libxext",
+	branch = "master",
+	remote = "https://gitlab.freedesktop.org/xorg/lib/libxext.git",
+)
+
+git_repository(
+	name = "libxcursor",
+	branch = "master",
+	remote = "https://gitlab.freedesktop.org/xorg/lib/libxcursor.git",
+)
+
+git_repository(
+	name = "wayland",
+	branch = "main",
+	remote = "https://gitlab.freedesktop.org/wayland/wayland.git",
+)
+
+git_repository(
+	name = "udev",
+	branch = "main",
+	remote = "https://github.com/systemd/systemd.git",
+)
+
+# Needs maintainability
+http_archive(
+	name = "speechd",
+	url = "https://freebsoft.org/pub/projects/speechd/speech-dispatcher-0.8.8.tar.gz",
+)
+
+git_repository(
+	name = "pulseaudio",
+	branch = "master",
+	remote = "https://gitlab.freedesktop.org/pulseaudio/pulseaudio.git",
+)
+
+git_repository(
+	name = "libdecor",
+	branch = "master",
+	remote = "https://gitlab.freedesktop.org/libdecor/libdecor.git",
+)
+
+git_repository(
+	name = "fontconfig",
+	branch = "main",
+	remote = "https://gitlab.freedesktop.org/fontconfig/fontconfig.git",
+)
+
+git_repository(
+	name = "dbus",
+	branch = "main",
+	remote = "https://gitlab.freedesktop.org/dbus/dbus.git",
+)
+
+git_repository(
+	name = "alsa-lib",
+	branch = "master",
+	remote = "https://github.com/alsa-project/alsa-lib.git",
+	patches = glob(["thirdparty/linuxbsd_headers/alsa/patches/*.patch"]),
+)
+
+git_repository(
+	name = "alsa-lib",
+	branch = "master",
+	remote = "https://github.com/alsa-project/alsa-lib.git",
+)
+
+git_repository(
+	name = "manifold",
+	branch = "master",
+	remote = "https://github.com/elalish/manifold.git",
+)
+
+git_repository(
+	name = "manifold",
+	branch = "master",
+	remote = "https://github.com/elalish/manifold.git",
+)
+
+git_repository(
+	name = "mbedlts",
+	branch = "development",
+	remote = "https://github.com/Mbed-TLS/mbedtls.git",
+	patches = glob(["thirdparty/mbedlts/patches/*.patch"]),
+)
+
+git_repository(
+	name = "meshoptimizer",
+	branch = "master",
+	remote = "https://github.com/zeux/meshoptimizer.git",
+)
+
+git_repository(
+	name = "mingw-std-threads",
+	branch = "master",
+	remote = "https://github.com/meganz/mingw-std-threads.git",
+	patches = glob(["thirdparty/mingw-std-threads/patches/*.patch"]),
+)
+
+git_repository(
+	name = "miniupnp",
+	branch = "master",
+	remote = "https://github.com/miniupnp/miniupnp.git",
+)
+
+git_repository(
+	name = "bcdec",
+	branch = "main",
+	remote = "https://github.com/iOrange/bcdec.git",
+)
+
+git_repository(
+	name = "fastnoiselite",
+	branch = "master",
+	remote = "https://github.com/Auburn/FastNoiseLite.git",
+	patches = ["thirdparty/smazfastnoiselite/patches/FastNoiseLite-0001-namespace-warnings.patch"],
+)
+
+# Needs maintainability
+http_archive(
+	name = "ifaddrs-android",
+	url = "https://chromium.googlesource.com/external/webrtc/stable/talk/+/master/base/ifaddrs-android.h",
+)
+
+git_repository(
+	name = "mikktspace",
+	branch = "master",
+	remote = "https://github.com/mmikk/MikkTSpace.git",
+)
+
+git_repository(
+	name = "mikktspace",
+	branch = "master",
+	remote = "https://github.com/mmikk/MikkTSpace.git",
+)
+
+# Needs maintainability
+http_archive(
+	name = "nvapi",
+	url = "https://download.nvidia.com/XFree86/nvapi-open-source-sdk/R560-OpenSource.tar",
+)
+
+git_repository(
+	name = "pcg",
+	branch = "master",
+	remote = "https://github.com/imneme/pcg-c.git",
+)
+
+git_repository(
+	name = "pcg",
+	branch = "master",
+	remote = "https://github.com/imneme/pcg-c.git",
+)
+
+git_repository(
+	name = "qoa",
+	branch = "master",
+	remote = "https://github.com/phoboslab/qoa.git",
+)
+
+git_repository(
+	name = "r128",
+	branch = "main",
+	remote = "https://github.com/fahickman/r128.git",
+)
+
+git_repository(
+	name = "smaz",
+	branch = "master",
+	remote = "https://github.com/antirez/smaz.git",
+	patches = ["thirdparty/smaz/patches/smaz-0001-write-string-warning.patch"],
+)
+
+git_repository(
+	name = "smol-v",
+	branch = "main",
+	remote = "https://github.com/aras-p/smol-v.git",
+)
+
+git_repository(
+	name = "stb_rect_pack",
+	branch = "master",
+	remote = "https://github.com/nothings/stb.git",
+)
+
+# Needs maintainability
+http_archive(
+	name = "yuv2rgb",
+	url = "http://wss.co.uk/pinknoise/yuv2rgb/yuv2rgb003.zip",
+)
+
+git_repository(
+	name = "msdfgen",
+	branch = "main",
+	remote = "https://github.com/Chlumsky/msdfgen.git",
+	patches = glob(["thirdparty/msdfgen/patches/*.patch"]),
+)
+
+git_repository(
+	name = "openxr",
+	branch = "main",
+	remote = "https://github.com/KhronosGroup/OpenXR-SDK.git",
+)
+
+git_repository(
+	name = "pcre2",
+	branch = "main",
+	remote = "https://github.com/PCRE2Project/pcre2.git",
+)
+
+git_repository(
+	name = "re-spirv",
+	branch = "main",
+	remote = "https://github.com/renderbag/re-spirv.git",
+)
+
+git_repository(
+	name = "recastnavigation",
+	branch = "main",
+	remote = "https://github.com/recastnavigation/recastnavigation.git",
+)
+
+git_repository(
+	name = "rvo2_2d",
+	branch = "main",
+	remote = "https://github.com/snape/RVO2.git",
+)
+
+git_repository(
+	name = "rvo2_3d",
+	branch = "main",
+	remote = "https://github.com/snape/RVO2-3D.git",
+)
+
+git_repository(
+	name = "sdl",
+	branch = "main",
+	remote = "https://github.com/libsdl-org/SDL.git",
+	patches = glob(["thirdparty/sdl/patches/*.patch"]),
+)
+
+git_repository(
+	name = "smaa",
+	branch = "main",
+	remote = "https://github.com/iryoku/smaa.git",
+)
+
+git_repository(
+	name = "spirv_cross",
+	branch = "main",
+	remote = "https://github.com/KhronosGroup/SPIRV-Cross.git",
+)
+
+git_repository(
+	name = "spirv_headers",
+	branch = "main",
+	remote = "https://github.com/KhronosGroup/SPIRV-Headers.git",
+)
+
+git_repository(
+	name = "spirv_reflect",
+	branch = "main",
+	remote = "https://github.com/KhronosGroup/SPIRV-Reflect.git",
+	patches = glob(["thirdparty/spirv_reflect/patches/*.patch"]),
+)
+
+git_repository(
+	name = "thorvg",
+	branch = "main",
+	remote = "https://github.com/thorvg/thorvg.git",
+	patches = glob(["thirdparty/thorvg/patches/*.patch"]),
+)
+
+git_repository(
+	name = "tinyexr",
+	branch = "release",
+	remote = "https://github.com/syoyo/tinyexr.git",
+	patches = glob(["thirdparty/tinyexr/patches/*.patch"]),
+)
+
+git_repository(
+	name = "ufbx",
+	branch = "master",
+	remote = "https://github.com/ufbx/ufbx.git",
+)
+
+git_repository(
+	name = "vhacd",
+	branch = "master",
+	remote = "https://github.com/kmammou/v-hacd.git",
+	patches = glob(["thirdparty/vhacd/patches/*.patch"]),
+)
+
+git_repository(
+	name = "volk",
+	branch = "master",
+	remote = "https://github.com/zeux/volk.git",
+)
+
+git_repository(
+	name = "vulkan_memory_allocator",
+	branch = "main",
+	remote = "https://github.com/GPUOpen-LibrariesAndSDKs/VulkanMemoryAllocator.git",
+)
+
+git_repository(
+	name = "vulkan_utility_libraries",
+	branch = "main",
+	remote = "https://github.com/KhronosGroup/Vulkan-Utility-Libraries.git",
+)
+
+git_repository(
+	name = "vulkan_headers",
+	branch = "main",
+	remote = "https://github.com/KhronosGroup/Vulkan-Headers.git",
+)
+
+git_repository(
+	name = "wayland",
+	branch = "main",
+	remote = "https://gitlab.freedesktop.org/wayland/wayland.git",
+)
+
+git_repository(
+	name = "wayland_protocols",
+	branch = "main",
+	remote = "https://gitlab.freedesktop.org/wayland/wayland-protocols.git",
+)
+
+git_repository(
+	name = "wslay",
+	branch = "master",
+	remote = "https://github.com/tatsuhiro-t/wslay.git",
+	patches = glob(["thirdparty/wslay/patches/*.patch"]),
+)
 
 git_repository(
 	name = "xatlas",
